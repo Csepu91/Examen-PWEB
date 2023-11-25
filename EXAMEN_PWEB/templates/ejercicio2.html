@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/estilos.css">
+</head>
+<body>
+    <div>
+        <form class=form action="/ejercicio2" method="post">
+            <h1>Inicio de sesión</h1>
+            <div class=div1>
+            <label for="usuario">Ingresa tu nombre</label>
+            <br>
+            <input type="text" id="usuario" name="usuario" required value="{{request.form.usuario if request.form.usuario}}">
+            <br><br>
+            <label for="passw">Ingresa tu contraseña</label>
+            <br>
+            <input type="password" id="passw" name="passw" required value="{{request.form.passw if request.form.passw}}">
+            <br><br>
+            <button class=button type="submit">Verificar</button>
+            </div>
+            {% if linex %}
+            <div>
+                <p>{{linex}}</p>
+            </div>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>

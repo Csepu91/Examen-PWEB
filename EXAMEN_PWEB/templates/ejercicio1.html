@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/estilos.css">
+</head>
+<body>
+    <div>
+        <form class=form action="/ejercicio1" method="post">
+            <h1>Calculo de compras</h1>
+            <div class=div1>
+            <label for="nombre">Ingresa tu nombre</label>
+            <br>
+            <input type="text" id="nombre" name="nombre" required value="{{request.form.nombre if request.form.nombre}}">
+            <br><br>
+            <label for="edad">Ingresa tu edad</label>
+            <br>
+            <input type="number" id="edad" name="edad" required value="{{request.form.edad if request.form.edad}}">
+            <br><br>
+            <label for="cpintura">Ingresa la cantidad de tarros de pintura a comprar</label>
+            <br>
+            <input type="text" id="cpintura" name="cpintura" required value="{{request.form.cpintura if request.form.cpintura}}">
+            <br><br>
+            <button class=button type="submit">Calcular</button>
+            </div>
+            {% if r_nombre, r_total, r_desc, r_totald %}
+            <div>
+                <p>{{r_nombre}}</p>
+                <p>{{r_total}}</p>
+                <p>{{r_desc}}</p>
+                <p>{{r_totald}}</p>
+            </div>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>
